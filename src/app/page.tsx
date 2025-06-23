@@ -1,7 +1,7 @@
 'use client';//SEMPRE NO TOPO
 import { useState, useEffect } from 'react';
 
-const URL_API = "https://ajudasocial-api-yxbj.onrender.com/recursos";
+const URL_API = "https://ajudasocialapi.onrender.com/resources";
 
 export default function Home() {
 
