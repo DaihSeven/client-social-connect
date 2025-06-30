@@ -13,12 +13,16 @@ type Filters = {
 type Resource = {
   id: string;
   name: string;
+  type: string;
+  address: string;
+  city: string;
+  hours: string;
+  contact: string;
 };
 
 function buildApiUrl(filters: Filters): string {
   const { city, type, localization } = filters;
 
-  // Ordem importa! Essa rota precisa vir antes das outras mais genéricas
   if (city && type && localization) {
     return `/resources/${city}/type/${type}/localization/${localization}`;
   }
@@ -45,7 +49,6 @@ function buildApiUrl(filters: Filters): string {
 
   return `/resources`;
 }
-
 
 export default function Home() {
 
@@ -141,12 +144,3 @@ export default function Home() {
     </main>
   );
   }
-
-/* possível erro  corrigido: 
-O navegador está bloqueando o fetch porque o backend (API) não está permitindo requisições vindas do seu frontend.
-// Achar um modo de colocar uma senha ou algo parecido no backend para que o frontend possa acessar a API.
-// Solução: Habilitar CORS no backend
-// No seu backend
-import cors from 'cors';
-app.use(cors());
-*/
