@@ -3,11 +3,11 @@ import { useState } from 'react';
 import { Resource } from '../types/resource';
 import { formatType } from '../utils/formatType';
 
-const API = process.env.NEXT_PUBLIC_API_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 const types = [
-  'abrigo', 'alimentacao', 'juridico', 'apoio psicologico',
+  'abrigo', 'alimentação', 'jurídico', 'apoio psicológico',
   'apoio para dependentes', 'idosos', 'apoio socioassistencial',
-  'orientação', 'mulheres', 'documentacão', 'defensoria publica'
+  'orientação', 'mulheres', 'documentação', 'defensoria pública'
 ];
 
 export default function TypeSection() {
@@ -26,7 +26,7 @@ export default function TypeSection() {
     if (!resourcesByType[type]) {
       setLoadingType(type);
       try {
-        const res = await fetch(`${API}/resources/type/${encodeURIComponent(type)}`);
+        const res = await fetch(`${API_BASE_URL}/resources/type/${encodeURIComponent(type)}`);
         const data = await res.json();
 
         if (!Array.isArray(data)) {
@@ -52,7 +52,7 @@ export default function TypeSection() {
           <li key={type}>
             <button
               onClick={() => toggleType(type)}
-              className="text-left w-full font-medium text-blue-600 hover:underline"
+              className="text-left w-full font-semibold text-[#F2D3AC] hover:underline"
             >
               {expandedType === type ? '▼' : '►'} {type.charAt(0).toUpperCase() + type.slice(1)}
             </button>
@@ -64,13 +64,13 @@ export default function TypeSection() {
                 ) : (
                   <ul className="space-y-1">
                     {(Array.isArray(resourcesByType[type]) ? resourcesByType[type] : []).map((res) => (
-                      <li key={res.id} className="border p-4 rounded space-y-1 bg-white text-black">
-                        <p><strong>Nome:</strong> {res.name}</p>
-                        <p><strong>Tipo:</strong> {formatType(res.type)}</p>
-                        <p><strong>Endereço:</strong> {res.address}</p>
-                        <p><strong>Cidade:</strong> {res.city}</p>
-                        <p><strong>Horário:</strong> {res.hours}</p>
-                        <p><strong>Contato:</strong> {res.contact}</p>
+                      <li key={res.id} className="border p-4 rounded space-y-1 bg-[#FFFF89] text-[#0D0D0D] font-semibold">
+                        <p><strong>📍Nome:</strong> {res.name}</p>
+                        <p><strong>📌Tipo:</strong> {formatType(res.type)}</p>
+                        <p><strong>🏠Endereço:</strong> {res.address}</p>
+                        <p><strong>🌆Cidade:</strong> {res.city}</p>
+                        <p><strong>🕓Horário:</strong> {res.hours}</p>
+                        <p><strong>📞Contato:</strong> {res.contact}</p>
                       </li>
                     ))}
                     {Array.isArray(resourcesByType[type]) && resourcesByType[type].length === 0 && (

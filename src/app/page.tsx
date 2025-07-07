@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 import FilterSection from '../components/FilterSection';
 import CitySection from '../components/CitySection';
 import TypeSection from '../components/TypeSection';
-import AllResourcesSection from '../components/AllResourcesSection';
+import HighlightedCarousel from '../components/HighlightedCarousel';
 import FilteredResultsSection from '../components/FilteredResultsSection';
+import MissionSection from '@/components/MissionSection';
 import { Resource } from '../types/resource';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -69,6 +70,8 @@ export default function Home() {
 
   return (
     <main className="p-4 space-y-10">
+      <MissionSection />
+
       <h1 className="text-2xl font-bold">🔍 Buscar Recursos</h1>
 
       <FilterSection
@@ -104,7 +107,7 @@ export default function Home() {
 
       <FilteredResultsSection data={data} loading={loading} />
 
-      <AllResourcesSection />
+      <HighlightedCarousel />
 
       <hr className="my-10 border-gray-600" />
       <h2 className="text-lg font-semibold mb-2">Ver Recursos por Seções:</h2>

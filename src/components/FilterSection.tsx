@@ -44,7 +44,7 @@ export default function FilterSection({
 
   return (
     <section className="flex flex-col gap-4 md:flex-row md:items-center">
-      <select name="city" title="Filtro por cidade" value={filters.city ?? ''} onChange={handleChange} className="p-2 border rounded">
+      <select name="city" title="Filtro por cidade" value={filters.city ?? ''} onChange={handleChange} className="bg-[#0D0D0D] text-[#EBE03F] border rounded px-3 py-2">
         <option value="">Selecione uma cidade</option>
         {cityOptions.map((option) => (
           <option key={option.value} value={option.value}>
@@ -53,7 +53,7 @@ export default function FilterSection({
         ))}
       </select>
 
-      <select name="type" title="Filtro por tipo" value={filters.type ?? ''} onChange={handleChange} className="p-2 border rounded">
+      <select name="type" title="Filtro por tipo" value={filters.type ?? ''} onChange={handleChange} className="bg-[#0D0D0D] text-[#EBE03F] border rounded px-3 py-2">
         <option value="">Selecione um tipo</option>
         {typeOptions.map((option) => (
           <option key={option.value} value={option.value}>
@@ -62,7 +62,7 @@ export default function FilterSection({
         ))}
       </select>
 
-      <select name="localization" title="Filtro por localização" value={filters.localization ?? ''} onChange={handleChange} className="p-2 border rounded">
+      <select name="localization" title="Filtro por localização" value={filters.localization ?? ''} onChange={handleChange} className="bg-[#0D0D0D] text-[#EBE03F] border rounded px-3 py-2">
         <option value="">Todas as localizações</option>
         {localizationOptions.map((option) => (
           <option key={option.value} value={option.value}>

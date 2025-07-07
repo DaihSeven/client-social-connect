@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { Resource } from '../types/resource';
 import { formatType } from '../utils/formatType';
 
-const API = process.env.NEXT_PUBLIC_API_URL;
-const cities = ['curitiba', 'sao paulo', 'fortaleza', 'belo horizonte'];
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+const cities = ['Curitiba', 'São Paulo', 'Fortaleza', 'Belo Horizonte'];
 
 export default function CitySection() {
   const [expandedCity, setExpandedCity] = useState<string | null>(null);
@@ -13,17 +13,16 @@ export default function CitySection() {
 
   const toggleCity = async (city: string) => {
     if (expandedCity === city) {
-      setExpandedCity(null); // fecha
+      setExpandedCity(null);
       return;
     }
 
-    setExpandedCity(city); // abre
+    setExpandedCity(city);
 
-    // só busca se ainda não estiver carregado
     if (!resourcesByCity[city]) {
       setLoadingCity(city);
       try {
-        const res = await fetch(`${API}/resources/city/${encodeURIComponent(city)}`);
+        const res = await fetch(`${API_BASE_URL}/resources/city/${encodeURIComponent(city)}`);
         const data = await res.json();
 
         if (!Array.isArray(data)) {
@@ -49,7 +48,7 @@ export default function CitySection() {
           <li key={city}>
             <button
               onClick={() => toggleCity(city)}
-              className="text-left w-full font-medium text-blue-600 hover:underline"
+              className="text-left w-full font-semibold text-[#F2D3AC] hover:underline"
             >
               {expandedCity === city ? '▼' : '►'} {city.charAt(0).toUpperCase() + city.slice(1)}
             </button>
@@ -61,13 +60,13 @@ export default function CitySection() {
                 ) : (
                   <ul className="space-y-1">
                     {(Array.isArray(resourcesByCity[city]) ? resourcesByCity[city] : []).map((res) => (
-                      <li key={res.id} className="border p-4 rounded space-y-1 bg-white text-black">
-                        <p><strong>Nome:</strong> {res.name}</p>
-                        <p><strong>Tipo:</strong> {formatType(res.type)}</p>
-                        <p><strong>Endereço:</strong> {res.address}</p>
-                        <p><strong>Cidade:</strong> {res.city}</p>
-                        <p><strong>Horário:</strong> {res.hours}</p>
-                        <p><strong>Contato:</strong> {res.contact}</p>
+                      <li key={res.id} className="border p-4 rounded space-y-1 bg-[#FFFF89] text-[#0D0D0D] font-semibold">
+                        <p><strong>📍Nome:</strong> {res.name}</p>
+                        <p><strong>📌Tipo:</strong> {formatType(res.type)}</p>
+                        <p><strong>🏠Endereço:</strong> {res.address}</p>
+                        <p><strong>🌆Cidade:</strong> {res.city}</p>
+                        <p><strong>🕓Horário:</strong> {res.hours}</p>
+                        <p><strong>📞Contato:</strong> {res.contact}</p>
                     </li>
                     ))}
                     {Array.isArray(resourcesByCity[city]) && resourcesByCity[city].length === 0 && (

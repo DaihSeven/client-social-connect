@@ -4,7 +4,7 @@ import { Resource } from '../types/resource';
 import { formatType } from '../utils/formatType';
 
 type Props = {
-  readonly data: Resource[];
+  readonly data: Resource[];//usa resources/
   readonly loading: boolean;
 };
 
@@ -24,7 +24,7 @@ console.log('FilteredResultsSection render: data:', data, 'Array.isArray:', Arra
       <button
         onClick={() => setShow(!show)}
         aria-expanded={show}
-        className="mb-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+        className="mb-4 px-4 py-2 bg-[#F2D3AC] font-semibold text-[#0D0D0D] rounded hover:bg-[#DF9B81] transition"
       >
         {show ? 'Ocultar' : 'Visualizar'}
       </button>
@@ -32,29 +32,36 @@ console.log('FilteredResultsSection render: data:', data, 'Array.isArray:', Arra
       {loading && <p>Carregando recursos...</p>}
 
       {show && (
-  <ul className="space-y-2">
-    {Array.isArray(data) ? (
-      data.length === 0 ? (
-        <li>Nenhum resultado.</li>
-      ) : (
-        data.map(item => (
-          <li key={item.id} className="border p-4 rounded space-y-1 bg-white text-black">
-            <p><strong>Nome:</strong> {item.name}</p>
-            <p><strong>Tipo:</strong> {formatType(item.type)}</p>
-            <p><strong>Endereço:</strong> {item.address}</p>
-            <p><strong>Cidade:</strong> {item.city}</p>
-            <p><strong>Horário:</strong> {item.hours}</p>
-            <p><strong>Contato:</strong> {item.contact}</p>
-          </li>
-        ))
-      )
+  <ul className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+  {Array.isArray(data) ? (
+    data.length === 0 ? (
+      <li className="text-yellow-200">Nenhum resultado encontrado.</li>
     ) : (
-      <li><strong>Erro: dados inválidos para exibir.</strong><br />Tipo recebido: {typeof data}<br />JSON: {JSON.stringify(data)}</li>
-    )}
-  </ul>
+      data.map(item => (
+        <li
+          key={item.id}
+          className="bg-[#FFFF89] text-[#0D0D0D] font-bold p-4 rounded-xl shadow-md border border-yellow-700 hover:scale-[1.02] transition-transform duration-200"
+        >
+          <p><strong>📍 Nome:</strong> {item.name}</p>
+          <p><strong>📌 Tipo:</strong> {formatType(item.type)}</p>
+          <p><strong>🏠 Endereço:</strong> {item.address}</p>
+          <p><strong>🌆 Cidade:</strong> {item.city}</p>
+          <p><strong>🕓 Horário:</strong> {item.hours}</p>
+          <p><strong>📞 Contato:</strong> {item.contact}</p>
+        </li>
+      ))
+    )
+  ) : (
+    <li className="text-red-600 bg-white p-2 rounded shadow border">
+      <strong>Erro:</strong> dados inválidos para exibir.<br />
+      Tipo recebido: {typeof data}<br />
+      JSON: {JSON.stringify(data)}
+    </li>
+  )}
+</ul>
+
 )}
 
     </section>
   );
 }
-//A COMUNICAÇÃO ENTRE OS FILTROS E A SEÇÃO DE MOSTRAR OS RESULTADOS ESTÁ ENTENDENDO ERRADO A DIFERENÇA ENTRA ALIMENTAÇÃO E ALIMANTACAO POR EXEMPLO, VERIFICAR NOS TYPES, NO FORMAT, E NOS VALUES ESSA DIFERENÇA 
