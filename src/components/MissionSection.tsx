@@ -1,17 +1,19 @@
 'use client';
 import Image from 'next/image';
 //#0D0D0D
+//#40200E
+//#E3B03F
 export default function MissionSection() {
     return (
-        <section className="my-16 px-4 md:px-8 ax-w-6xl mx-auto bg-[#40200E]">
+        <section className="my-16 px-4 md:px-8 ax-w-6xl mx-auto bg-[#40200E]/90">
             <article className="grid md:grid-cols-2 gap-8 items-center">
                 <section aria-labelledby="mission-heading">
-                    <h2 id="mission-heading" className="text-3xl font-bold text-700 mb-4">Ajuda Social - Conectando</h2> 
+                    <h2 id="mission-heading" className="text-3xl text-yellow-300 font-bold text-700 mb-4">Ajuda Social - Conectando</h2> 
 
                     <p className="text-lg text-[#F2D3AC] mb-6 "><strong>Conectando pessoas em situação de vulnerabilidade a serviços essenciais</strong>
                     </p>
 
-                    <h3 className="text-xl font-semibold mb-2">🎯 Missão</h3>
+                    <h3 className="text-xl text-yellow-300 font-semibold mb-2">🎯 Missão</h3>
 
                     <p className="font-semibold text-[#F2D3AC] mb-4">
                     Ajuda Social - Conectando é uma solução tecnológica criada para conectar pessoas em situação de vulnerabilidade social como moradores de rua, desabrigados ou indivíduos em risco a serviços de apoio essenciais.

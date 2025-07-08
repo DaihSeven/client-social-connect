@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Resource } from '../types/resource';
 import { formatType } from '../utils/formatType';
 import { motion } from 'framer-motion';
+import LoadingSpinner from '@/components/LoadingSpinner';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -45,14 +46,14 @@ export default function HighlightedCarousel() {
         return () => clearInterval(interval);
     }, [autoRotate, highlights.length]);
 
-    if (highlights.length === 0) return <p>Carregando destaques...</p>;
+    if (highlights.length === 0) return (<LoadingSpinner text="Buscando recursos em destaque..." />
+  );
 
     const current = highlights[currentIndex];
 
     return (
-        <section className="my-6" style={{ background: 'linear-gradient(to bottom, rgba(64, 32, 14, 0.9), rgba(255, 255, 137, 0.5)), rgba(64, 32, 14, 0.9)'
-  }}>
-      <h2 className="text-lg font-bold mb-2 text-yellow-300 text-center">🌟 Recurso em Destaque</h2>
+        <section className="my-6 mt-8  bg-gradient-ajuda">
+        <h2 className="text-2xl font-bold mb-2 text-yellow-300 text-center">🌟 Recurso em Destaque</h2>
 
       <motion.div
         key={current.id}
@@ -75,7 +76,7 @@ export default function HighlightedCarousel() {
             setAutoRotate(false);
             setCurrentIndex((prev) => (prev -1 + highlights.length) % highlights.length);
         }}
-        className="px-4 py-2 bg-[#F2D3AC] font-semibold text-[#0D0D0D] rounded hover:bg-[#DF9B81] transition">
+        className="px-4 py-2  bg-[#40200E] font-semibold text-[#F2D3AC] rounded hover:bg-[#0D0D0D] transition">
           ◀️ Anterior
         </button>
 
@@ -83,7 +84,7 @@ export default function HighlightedCarousel() {
             setAutoRotate(true);
             setCurrentIndex((prev) => (prev +1) % highlights.length);
         }}
-        className="px-4 py-2 bg-[#F2D3AC] font-semibold text-[#0D0D0D] rounded hover:bg-[#DF9B81] transition">
+        className="px-4 py-2 bg-[#40200E] font-semibold text-[#F2D3AC] rounded hover:bg-[#0D0D0D] transition">
           Próximo ▶️
           </button>
       </section>

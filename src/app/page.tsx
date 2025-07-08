@@ -9,6 +9,7 @@ import FilteredResultsSection from '../components/FilteredResultsSection';
 import MissionSection from '@/components/MissionSection';
 import { Resource } from '../types/resource';
 
+
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 type Filters = {
@@ -75,7 +76,7 @@ export default function Home() {
       </section>
 
       <section id="filtros">
-      <h1 className="text-2xl font-bold bg-[#40200E]">🔍 Buscar Recursos</h1>
+      <h1 className="text-2xl font-bold text-yellow-300 bg-[#40200E] mt-8">🔍 Buscar Recursos</h1>
 
       <FilterSection
         filters={filters}
@@ -114,8 +115,8 @@ export default function Home() {
         <HighlightedCarousel />
       </section>
 
-       <section id="secoes">
-      <h2 className="text-lg font-semibold mb-2">Ver Recursos por Seções:</h2>
+      <section id="secoes">
+      <h2 className="text-2xl font-bold text-center text-800 text-[#40200E] [text-shadow:2px_2px_0_#F2D3AC,4px_4px_0_rgba(0,0,0,0.1)]">Ver Recursos por Seções</h2>
       <CitySection />
       <TypeSection />
       </section>
