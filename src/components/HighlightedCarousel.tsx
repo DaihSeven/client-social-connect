@@ -18,7 +18,7 @@ export default function HighlightedCarousel() {
                 const res = await fetch(`${API_BASE_URL}/resources`);
                 const data = await res.json();
 
-                const grouped: Record<string, Resource[]> = data.reduce((accumulator: any, currentItem: Resource) => {
+                const grouped: Record<string, Resource[]> = data.reduce((accumulator: Record<string, Resource[]>, currentItem: Resource) => {
                 accumulator[currentItem.city] ||= [];
                 accumulator[currentItem.city].push(currentItem);
                 return accumulator;
