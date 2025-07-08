@@ -70,9 +70,12 @@ export default function Home() {
 
   return (
     <main className="p-4 space-y-10">
-      <MissionSection />
+      <section id="missao">
+        <MissionSection />
+      </section>
 
-      <h1 className="text-2xl font-bold">🔍 Buscar Recursos</h1>
+      <section id="filtros">
+      <h1 className="text-2xl font-bold bg-[#40200E]">🔍 Buscar Recursos</h1>
 
       <FilterSection
         filters={filters}
@@ -104,16 +107,18 @@ export default function Home() {
           { label: 'Vila', value: 'vila' },
         ]}
       />
-
       <FilteredResultsSection data={data} loading={loading} />
+      </section>
 
-      <HighlightedCarousel />
+      <section id="destaques">
+        <HighlightedCarousel />
+      </section>
 
-      <hr className="my-10 border-gray-600" />
+       <section id="secoes">
       <h2 className="text-lg font-semibold mb-2">Ver Recursos por Seções:</h2>
-
       <CitySection />
       <TypeSection />
+      </section>
     </main>
   );
 }

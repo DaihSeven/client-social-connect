@@ -41,7 +41,8 @@ export default function CitySection() {
   };
 
   return (
-    <section className="mb-10">
+    <section className="mb-10 bg-cover bg-center bg-repeat" style={{ backgroundImage: "url('/city.jpg')"}} >
+      <article className="bg-black/60">
       <h2 className="text-lg font-bold mb-2">📍 Recursos por Cidade</h2>
       <ul className="space-y-2">
         {cities.map((city) => (
@@ -79,6 +80,7 @@ export default function CitySection() {
           </li>
         ))}
       </ul>
+      </article>
     </section>
   );
 }

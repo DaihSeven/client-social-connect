@@ -50,7 +50,8 @@ export default function HighlightedCarousel() {
     const current = highlights[currentIndex];
 
     return (
-        <section className="my-6">
+        <section className="my-6" style={{ background: 'linear-gradient(to bottom, rgba(64, 32, 14, 0.9), rgba(255, 255, 137, 0.5)), rgba(64, 32, 14, 0.9)'
+  }}>
       <h2 className="text-lg font-bold mb-2 text-yellow-300 text-center">🌟 Recurso em Destaque</h2>
 
       <motion.div

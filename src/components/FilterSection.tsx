@@ -43,7 +43,7 @@ export default function FilterSection({
 };
 
   return (
-    <section className="flex flex-col gap-4 md:flex-row md:items-center">
+    <section className="flex flex-col gap-4 md:flex-row md:items-center bg-[#40200E]">
       <select name="city" title="Filtro por cidade" value={filters.city ?? ''} onChange={handleChange} className="bg-[#0D0D0D] text-[#EBE03F] border rounded px-3 py-2">
         <option value="">Selecione uma cidade</option>
         {cityOptions.map((option) => (

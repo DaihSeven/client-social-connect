@@ -45,7 +45,8 @@ export default function TypeSection() {
   };
 
   return (
-    <section className="mb-10">
+    <section className="mb-10 bg-cover bg-center bg-repeat" style={{ backgroundImage: "url('/help.png')"}} >
+      <article className="bg-black/60">
       <h2 className="text-lg font-bold mb-2">🧩 Recursos por Tipo</h2>
       <ul className="space-y-2">
         {types.map((type) => (
@@ -83,6 +84,7 @@ export default function TypeSection() {
           </li>
         ))}
       </ul>
+      </article>
     </section>
   );
 }
