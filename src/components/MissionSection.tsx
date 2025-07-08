@@ -31,7 +31,7 @@ export default function MissionSection() {
                     </ul>
 
                     <blockquote className="italic  font-semibold text-[#EBE03F] border-l-4 pl-4 border-[#A6330A]">
-                        "Facilitar o acesso a recursos que salvam vidas, conectando quem precisa de ajuda a quem pode oferecer."
+                        {"Facilitar o acesso a recursos que salvam vidas, conectando quem precisa de ajuda a quem pode oferecer."}
                     </blockquote>
         </section>
                 <figure className="relative w-[450px] aspect-[4/4]">
