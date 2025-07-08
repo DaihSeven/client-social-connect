@@ -1,6 +1,14 @@
-'use client';//SEMPRE NO TOPO
+'use client';
+
 import { useState, useEffect } from 'react';
 import FilterSection from '../components/FilterSection';
+import CitySection from '../components/CitySection';
+import TypeSection from '../components/TypeSection';
+import HighlightedCarousel from '../components/HighlightedCarousel';
+import FilteredResultsSection from '../components/FilteredResultsSection';
+import MissionSection from '@/components/MissionSection';
+import { Resource } from '../types/resource';
+
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -10,100 +18,82 @@ type Filters = {
   localization: string;
 };
 
-type Resource = {
-  id: string;
-  name: string;
-  type: string;
-  address: string;
-  city: string;
-  hours: string;
-  contact: string;
-};
-
 function buildApiUrl(filters: Filters): string {
   const { city, type, localization } = filters;
 
-  if (city && type && localization) {
+  if (city && type && localization)
     return `/resources/${city}/type/${type}/localization/${localization}`;
-  }
-
-  if (city && type) {
+  if (city && type)
     return `/resources/${city}/type/${type}`;
-  }
-
-  if (city && localization) {
+  if (city && localization)
     return `/resources/${city}/localization/${localization}`;
-  }
-
-  if (city) {
+  if (city)
     return `/resources/city/${city}`;
-  }
-
-  if (type) {
+  if (type)
     return `/resources/type/${type}`;
-  }
-
-  if (localization) {
+  if (localization)
     return `/resources/localization/${localization}`;
-  }
-
   return `/resources`;
 }
 
 export default function Home() {
-
-  const [ filters, setFilters] = useState<Filters>({
-    city:'',
-    type:'',
-    localization:'',
+  const [filters, setFilters] = useState<Filters>({
+    city: '',
+    type: '',
+    localization: '',
   });
 
-  const [data, setData] = useState<Resource[]>([]);//resources)
+  const [data, setData] = useState<Resource[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const handleFilterChange = (updateFilters: Filters) => {
-  setFilters(updateFilters);
-};
+  const handleFilterChange = (updatedFilters: Filters) => {
+    setFilters(updatedFilters);
+  };
 
   useEffect(() => {
-  const fetchFilteredData = async () => {
-    const url = buildApiUrl(filters);
+    const fetchFilteredData = async () => {
+      const url = buildApiUrl(filters);
+      setLoading(true);
+      try {
+        const res = await fetch(`${API_BASE_URL}${url}`);
+        const json = await res.json();
+        setData(json);
+      } catch (error) {
+        console.error('Erro ao buscar recursos:', error);
+        setData([]);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    setLoading(true);
-    try {
-      const res = await fetch(`${API_BASE_URL}${url}`);
-      const json =await res.json();
-      setData(json);
-    } catch (error) {
-      console.error('Erro ao buscar recursos: ', error);
-      setData([]);
-    } finally {
-      setLoading(false);
-    }
-  };
     fetchFilteredData();
   }, [filters]);
 
   return (
-    <main className="p-4">
-      <h1 className="text-xl font-bold mb-4">Filtrar Recursos</h1>
+    <main className="p-4 space-y-10">
+      <section id="missao">
+        <MissionSection />
+      </section>
+
+      <section id="filtros">
+      <h1 className="text-2xl font-bold text-yellow-300 bg-[#40200E] mt-8">🔍 Buscar Recursos</h1>
 
       <FilterSection
         filters={filters}
         onFilterChange={handleFilterChange}
         cityOptions={[
-          { label: 'São Paulo', value: 'sao paulo' }, 
+          { label: 'São Paulo', value: 'sao paulo' },
           { label: 'Curitiba', value: 'curitiba' },
           { label: 'Belo Horizonte', value: 'belo horizonte' },
-          { label: 'Fortaleza', value: 'fortaleza' } 
+          { label: 'Fortaleza', value: 'fortaleza' },
         ]}
         typeOptions={[
-          { label: 'Abrigo', value: 'abrigo' }, 
+          { label: 'Abrigo', value: 'abrigo' },
           { label: 'Alimentação', value: 'alimentacao' },
-          { label: 'Juridico', value: 'juridico' }, 
-          { label: 'Apoio psicológico', value: 'apoio psicologico' }, 
-          { label: 'Apoio para dependentes', value: 'apoio para dependentes' }, 
-          { label: 'Idosos', value: 'idosos' }, 
+          { label: 'Juridico', value: 'juridico' },
+          { label: 'Apoio psicológico', value: 'apoio psicologico' },
+          { label: 'Apoio para dependentes', value: 'apoio para dependentes' },
+          { label: 'Idosos', value: 'idosos' },
           { label: 'Apoio socioassistencial', value: 'apoio socioassistencial' },
           { label: 'Orientação', value: 'orientação' },
           { label: 'Mulheres', value: 'mulheres' },
@@ -111,36 +101,25 @@ export default function Home() {
           { label: 'Defensoria pública', value: 'defensoria publica' },
         ]}
         localizationOptions={[
-          { label: 'Centro', value: 'centro' }, 
+          { label: 'Centro', value: 'centro' },
           { label: 'Zona Sul', value: 'zona-sul' },
           { label: 'Rua', value: 'rua' },
           { label: 'Av.', value: 'av' },
           { label: 'Vila', value: 'vila' },
         ]}
       />
-
-      <section className="mt-6">
-        {(() => {
-          if (loading) {
-           return <p>Carregando...</p>;
-          }
-
-          if (data.length === 0) {
-            return <p>Nenhum recurso encontrado.</p>;
-          }
-
-          return (
-            <ul className="space-y-2">
-              {data.map((item) => (
-              <li key={item.id} className="border p-2 rounded">
-                {item.name}
-              </li>
-              ))}
-            </ul>
-          );
-        })()}
+      <FilteredResultsSection data={data} loading={loading} />
       </section>
 
+      <section id="destaques">
+        <HighlightedCarousel />
+      </section>
+
+      <section id="secoes">
+      <h2 className="text-2xl font-bold text-center text-800 text-[#40200E] [text-shadow:2px_2px_0_#F2D3AC,4px_4px_0_rgba(0,0,0,0.1)]">Ver Recursos por Seções</h2>
+      <CitySection />
+      <TypeSection />
+      </section>
     </main>
   );
-  }
+}
