@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FFFF89;
+  --background: #FFFF;
 
   --foreground: #40200E;
 
@@ -13,7 +13,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background:#FFFF89;
+    --background:#FFFF;
     --foreground: #40200E;
   }
 }
@@ -25,5 +25,5 @@ body {
 }
 
 .bg-gradient-ajuda {
-  background-image: linear-gradient(to bottom, rgba(64, 32, 14, 0.9), rgba(255, 255, 137, 0.5), rgba(64, 32, 14, 0.9));
+  background-image: linear-gradient(to bottom, rgba(64, 32, 14, 0.9), rgba(247, 247, 99, 0.966), rgba(64, 32, 14, 0.9));
 }
