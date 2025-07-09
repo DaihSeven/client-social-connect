@@ -52,7 +52,7 @@ export default function HighlightedCarousel() {
     const current = highlights[currentIndex];
 
     return (
-        <section className="my-6 mt-8  bg-gradient-ajuda">
+        <section className="my-6 mt-12  bg-gradient-ajuda">
         <h2 className="text-2xl font-bold mb-2 text-yellow-300 text-center">🌟 Recurso em Destaque</h2>
 
       <motion.div

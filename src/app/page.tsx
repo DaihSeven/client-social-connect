@@ -76,7 +76,7 @@ export default function Home() {
       </section>
 
       <section id="filtros">
-      <h1 className="text-2xl font-bold text-yellow-300 bg-[#40200E] mt-8">🔍 Buscar Recursos</h1>
+      <h1 className="text-2xl font-bold text-yellow-300 bg-[#40200E] mt-12">🔍 Buscar Recursos</h1>
 
       <FilterSection
         filters={filters}
@@ -116,7 +116,8 @@ export default function Home() {
       </section>
 
       <section id="secoes">
-      <h2 className="text-2xl font-bold text-center text-800 text-[#40200E] [text-shadow:2px_2px_0_#F2D3AC,4px_4px_0_rgba(0,0,0,0.1)]">Ver Recursos por Seções</h2>
+      <h2 className="text-2xl mt-12 font-bold text-center text-[#40200E] relative
+      after:content-[''] after:block after:mx-auto after:mt-2 after:h-[5px] after:w-74 after:bg-[#40200E] after:shadow-md after:rounded-full">Ver Recursos por Seções</h2>
       <CitySection />
       <TypeSection />
       </section>
