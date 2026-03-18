@@ -1,31 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FAF7F2; /* bege claro elegante */
-  --foreground: #2C1A12; /* marrom profundo */
+  --background: #FFFFFF;
+  --foreground: #1F1F1F;
 
-  --primary: #6B3F1D; /* marrom mais refinado */
-  --secondary: #E9C46A; /* dourado suave */
-  --accent: #F1E3C6; /* tom creme */
+  --primary: #EAEAEA; /* cinza claro */
+  --secondary: #F5F5F5; /* fundo suave */
+  --accent: #D9D9D9; /* detalhes */
 
-  --muted: #A89A8E; /* cinza quente */
-  --border: #E5D7C8;
-
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --border: #E5E5E5;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #14110F;
-    --foreground: #F3EDE6;
+    --background: #FAFAFA;
+    --foreground: #222222;
 
-    --primary: #D4A373;
-    --secondary: #E9C46A;
-    --accent: #3B2A1F;
+    --primary: #F0F0F0;
+    --secondary: #E8E8E8;
+    --accent: #CCCCCC;
 
     --muted: #9A8C82;
-    --border: #2A211C;
+    --border: #E0E0E0;
   }
 }
 
@@ -38,8 +34,8 @@ body {
 .bg-gradient-ajuda {
   background-image: linear-gradient(
     to bottom,
-    #3B1F0F,
-    #8B4513,
-    #F4D35E
+    #FFFFFF,
+    #F5F5F5,
+    #EAEAEA
   );
 }
