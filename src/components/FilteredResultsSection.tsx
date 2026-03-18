@@ -21,7 +21,7 @@ console.log('FilteredResultsSection render: data:', data, 'Array.isArray:', Arra
 
   return (
     <section className="mt-8">
-      <h2 className="text-lg font-bold mb-2 text-[#40200E]" >🔎 Resultados Filtrados</h2>
+      <h2 className="text-lg font-bold mb-2 text-[#444]" >🔎 Resultados Filtrados</h2>
       <button
         onClick={() => setShow(!show)}
         aria-expanded={show}

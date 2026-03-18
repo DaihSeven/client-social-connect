@@ -5,7 +5,7 @@ const docsUrl = `${API_BASE_URL}/docs`;
 
 export default function Footer() {
   return (
-    <footer className="bg-[#40200E] text-[#FFFF89] text-sm py-6 mt-10">
+    <footer className="bg-[#1F1F1F] text-[#EAEAEA] text-sm py-6 mt-10 rounded-2xl shadow-sm">
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
         <p>© {new Date().getFullYear()} Ajuda Social - Conectando. Todos os direitos reservados.</p>
         <div className="flex gap-4">

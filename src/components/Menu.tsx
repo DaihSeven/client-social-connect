@@ -5,7 +5,7 @@ const docsUrl = `${API_BASE_URL}/docs`;
 
 export default function Menu() {
   return (
-    <header className="bg-[#EAEAEA] text-[#FFFF89] py-4 shadow-md sticky top-0 z-50">
+    <header className="bg-[#1F1F1F] text-[#FFD966] py-4 shadow-md sticky top-0 z-50 rounded-2xl shadow-sm">
       <nav className="max-w-6xl mx-auto px-4 flex justify-between items-center">
         <h1 className="text-xl font-bold">Ajuda Social - Conectando</h1>
         <ul className="flex gap-6 text-sm font-medium">

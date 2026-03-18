@@ -41,15 +41,15 @@ export default function CitySection() {
   };
 
   return (
-    <section className="mt-8 mb-10 bg-cover bg-center bg-repeat bg-[url('/city.jpg')]" >
-      <article className="bg-[#40200E]/25">
-      <h2 className="text-lg font-bold mb-2 text-[#40200E]">📍 Recursos por Cidade</h2>
+    <section className="mt-8 mb-10 bg-cover bg-center bg-repeat bg-[url('/city.jpg')] rounded-2xl shadow-sm" >
+      <article className="bg-white/60 backdrop-blur-sm">
+      <h2 className="text-lg font-bold mb-2 text-[#444]">📍 Recursos por Cidade</h2>
       <ul className="space-y-3">
         {cities.map((city) => (
           <li key={city}>
             <button
               onClick={() => toggleCity(city)}
-              className="text-left w-full font-semibold text-[#40200E] hover:underline"
+              className="text-left w-full font-semibold text-[#444] hover:underline"
             >
               {expandedCity === city ? '▼' : '►'} {city.charAt(0).toUpperCase() + city.slice(1)}
             </button>
@@ -57,7 +57,7 @@ export default function CitySection() {
             {expandedCity === city && (
               <div className="ml-4 mt-2">
                 {loadingCity === city ? (
-                  <p className="text-[#40200E] text-semibold">Carregando...</p>
+                  <p className="text-[#444] text-semibold">Carregando...</p>
                 ) : (
                   <ul className="space-y-1">
                     {(Array.isArray(resourcesByCity[city]) ? resourcesByCity[city] : []).map((res) => (

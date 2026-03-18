@@ -45,15 +45,15 @@ export default function TypeSection() {
   };
 
   return (
-    <section className=" mt-8 mb-10 bg-cover bg-center bg-repeat bg-[url('/help.png')]">
-      <article className="bg-[#40200E]/35">
-      <h2 className="text-lg font-bold mb-2 text-[#40200E]">🧩 Recursos por Tipo</h2>
+    <section className="mt-8 mb-10 bg-cover bg-center bg-no-repeat bg-[url('/help.png')] rounded-2xl shadow-sm">
+  <article className="bg-white/70 backdrop-blur-sm">
+      <h2 className="text-lg font-bold mb-2 text-[#444]">🧩 Recursos por Tipo</h2>
       <ul className="space-y-2">
         {types.map((type) => (
           <li key={type}>
             <button
               onClick={() => toggleType(type)}
-              className="text-left w-full font-semibold text-[#40200E] hover:underline"
+              className="text-left w-full font-semibold text-[#444] hover:underline"
             >
               {expandedType === type ? '▼' : '►'} {type.charAt(0).toUpperCase() + type.slice(1)}
             </button>
@@ -61,7 +61,7 @@ export default function TypeSection() {
             {expandedType === type && (
               <div className="ml-4 mt-2">
                 {loadingType === type ? (
-                  <p className="text-[#40200E] text-semibold">Carregando...</p>
+                  <p className="text-[#444] text-semibold">Carregando...</p>
                 ) : (
                   <ul className="space-y-1">
                     {(Array.isArray(resourcesByType[type]) ? resourcesByType[type] : []).map((res) => (
