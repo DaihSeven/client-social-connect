@@ -15,7 +15,7 @@ A **Ajuda Social - Conectando** é uma solução tecnológica criada para conect
 
 > "Facilitar o acesso a recursos que salvam vidas, conectando quem precisa de ajuda a quem pode oferecer."
 
-##🚨 Problemas que este projeto resolve
+## 🚨 Problemas que este projeto resolve
 
 Muitas pessoas em situação de vulnerabilidade social não sabem onde encontrar ajuda básica, como alimentação, abrigo ou atendimento médico. Ao mesmo tempo, cidadãos e voluntários que desejam ajudar também enfrentam dificuldades para localizar serviços confiáveis e próximos.
 
