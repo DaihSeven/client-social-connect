@@ -45,7 +45,7 @@ export default function TypeSection() {
   };
 
   return (
-    <section className="mt-8 mb-10 bg-cover bg-center bg-no-repeat bg-[url('/help.png')] rounded-2xl shadow-sm">
+    <section className="mt-8 mb-10 bg-cover bg-center bg-no-repeat bg-[url('/help1.png')] rounded-2xl shadow-sm">
   <article className="bg-white/70 backdrop-blur-sm">
       <h2 className="text-lg font-bold mb-2 text-[#444]">🧩 Recursos por Tipo</h2>
       <ul className="space-y-2">

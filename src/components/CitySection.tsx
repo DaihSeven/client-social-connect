@@ -41,7 +41,7 @@ export default function CitySection() {
   };
 
   return (
-    <section className="mt-8 mb-10 bg-cover bg-center bg-repeat bg-[url('/city.jpg')] rounded-2xl shadow-sm" >
+    <section className="mt-8 mb-10 bg-cover bg-center bg-repeat bg-[url('/city.png')] rounded-2xl shadow-sm" >
       <article className="bg-white/60 backdrop-blur-sm">
       <h2 className="text-lg font-bold mb-2 text-[#444]">📍 Recursos por Cidade</h2>
       <ul className="space-y-3">

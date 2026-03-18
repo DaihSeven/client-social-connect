@@ -15,22 +15,38 @@ A **Ajuda Social - Conectando** é uma solução tecnológica criada para conect
 
 > "Facilitar o acesso a recursos que salvam vidas, conectando quem precisa de ajuda a quem pode oferecer."
 
-## 🛠️ Tecnologias Utilizadas
+##🚨 Problemas que este projeto resolve
 
-- **Next.js** `15.3.3`
-- **React** `19.0.0`
-- **Framer Motion** `^12.23.0`
-- **Tailwind CSS** `^4`
-- **TypeScript** `^5`
+Muitas pessoas em situação de vulnerabilidade social não sabem onde encontrar ajuda básica, como alimentação, abrigo ou atendimento médico. Ao mesmo tempo, cidadãos e voluntários que desejam ajudar também enfrentam dificuldades para localizar serviços confiáveis e próximos.
+
+Este projeto resolve problemas reais como:
+
+❌ Falta de informação centralizada
+Serviços sociais estão espalhados e difíceis de encontrar. A plataforma reúne tudo em um único lugar.
+
+❌ Dificuldade em agir rapidamente
+Ao encontrar alguém em necessidade, muitas pessoas não sabem como ajudar. A aplicação permite localizar recursos de forma rápida e prática.
+
+❌ Acesso limitado a serviços essenciais
+Pessoas vulneráveis muitas vezes não têm acesso fácil a informações sobre alimentação, abrigo, saúde ou apoio jurídico.
+
+❌ Baixa visibilidade de instituições sociais
+ONGs e serviços públicos nem sempre são facilmente encontrados pela população. A plataforma aumenta a visibilidade dessas organizações.
+
+❌ Falta de ferramentas para busca personalizada
+Sem filtros, encontrar ajuda específica pode ser difícil. O sistema permite buscar por cidade, tipo de serviço e localização.
+
+❌ Desconexão entre quem precisa e quem pode ajudar
+A solução atua como ponte entre pessoas em vulnerabilidade e os recursos disponíveis na sociedade.
 
 ### Dependências
 
 ```
 "dependencies": {
   "framer-motion": "^12.23.0",
-  "next": "15.3.3",
-  "react": "^19.0.0",
-  "react-dom": "^19.0.0"
+  "next": "16.1.7",
+  "react": "^19.2.4",
+  "react-dom": "^19.2.4"
 },
 "devDependencies": {
   "@eslint/eslintrc": "^3",
@@ -109,3 +125,6 @@ Confira uma prévia mobile da landing page:
 
 <img src="./public/images/mobile1.png" alt="Texto alternativo" width="300" height="500"><img src="./public/images/mobile2.png" alt="Texto alternativo" width="300" height="500"><img src="./public/images/mobile3.png" alt="Texto alternativo" width="300" height="500">
 
+## 🛠️ Stack
+
+- **Next.js** `16.1.7`, **React** `19.2.4`, **Framer Motion** `^12.23.0`, **Tailwind CSS** `^4`, **TypeScript** `^5`
