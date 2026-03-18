@@ -25,7 +25,7 @@ console.log('FilteredResultsSection render: data:', data, 'Array.isArray:', Arra
       <button
         onClick={() => setShow(!show)}
         aria-expanded={show}
-        className="mb-4 px-4 py-2 bg-[#40200E] font-semibold text-[#F2D3AC] rounded hover:bg-[#0D0D0D] transition"
+        className="mb-4 px-4 py-2 bg-[#444] font-semibold text-[#F2D3AC] rounded hover:bg-[#0D0D0D] transition"
       >
         {show ? 'Ocultar' : 'Visualizar'}
       </button>

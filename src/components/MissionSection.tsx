@@ -5,7 +5,7 @@ import Image from 'next/image';
 //#E3B03F
 export default function MissionSection() {
     return (
-        <section className="my-16 px-4 md:px-8 max-w-6xl mx-auto bg-[#F5F5F5] rounded-2xl shadow-sm">
+        <section className="my-16 px-4 md:px-8 max-w-6xl mx-auto bg-[#1F1F1F] rounded-2xl shadow-sm">
             <article className="grid md:grid-cols-2 gap-8 items-center">
                 <section aria-labelledby="mission-heading">
                     <h2 id="mission-heading" className="text-3xl text-yellow-300 font-bold text-700 mb-4">Ajuda Social - Conectando</h2> 
