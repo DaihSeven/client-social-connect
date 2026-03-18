@@ -1,19 +1,56 @@
-// components/Menu.tsx
 'use client';
+
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 const docsUrl = `${API_BASE_URL}/docs`;
 
 export default function Menu() {
   return (
-    <header className="bg-[#1F1F1F] text-[#FFD966] py-4 shadow-md sticky top-0 z-50 ">
+    <header className="bg-white/80 backdrop-blur-md text-[#2A2A2A] py-4 sticky top-0 z-50 border-b border-[#E5E5E5]">
       <nav className="max-w-6xl mx-auto px-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold">Ajuda Social - Conectando</h1>
-        <ul className="flex gap-6 text-sm font-medium">
-          <li><a href="#missao" className="hover:underline">Missão</a></li>
-          <li><a href="#filtros" className="hover:underline">Buscar</a></li>
-          <li><a href="#destaques" className="hover:underline">Destaques</a></li>
-          <li><a href="#secoes" className="hover:underline">Seções</a></li>
-          <li><a href={docsUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">Documentação</a></li>
+
+        {/* Logo */}
+        <h1 className="text-xl font-bold tracking-tight">
+          Ajuda Social - <span className="text-[#E9C46A]">Conectando</span>
+        </h1>
+
+        {/* Links */}
+        <ul className="flex gap-6 text-sm font-medium items-center">
+
+          <li>
+            <a href="#missao" className="transition hover:text-[#E9C46A]">
+              Missão
+            </a>
+          </li>
+
+          <li>
+            <a href="#filtros" className="transition hover:text-[#E9C46A]">
+              Buscar
+            </a>
+          </li>
+
+          <li>
+            <a href="#destaques" className="transition hover:text-[#E9C46A]">
+              Destaques
+            </a>
+          </li>
+
+          <li>
+            <a href="#secoes" className="transition hover:text-[#E9C46A]">
+              Seções
+            </a>
+          </li>
+
+          <li>
+            <a
+              href={docsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 rounded-lg border border-[#E5E5E5] hover:border-[#E9C46A] hover:text-[#E9C46A] transition"
+            >
+              Documentação
+            </a>
+          </li>
+
         </ul>
       </nav>
     </header>
