@@ -76,7 +76,7 @@ export default function HighlightedCarousel() {
             setAutoRotate(false);
             setCurrentIndex((prev) => (prev -1 + highlights.length) % highlights.length);
         }}
-        className="px-4 py-2  bg-[#40200E] font-semibold text-[#F2D3AC] rounded hover:bg-[#0D0D0D] transition">
+        className="px-4 py-2  bg-[#FFF9DB] text-[#2A2A2A] font-semibold rounded hover:bg-[#0D0D0D] transition">
           ◀️ Anterior
         </button>
 
@@ -84,7 +84,7 @@ export default function HighlightedCarousel() {
             setAutoRotate(true);
             setCurrentIndex((prev) => (prev +1) % highlights.length);
         }}
-        className="px-4 py-2 bg-[#40200E] font-semibold text-[#F2D3AC] rounded hover:bg-[#0D0D0D] transition">
+        className="px-4 py-2 bg-[#FFF9DB] text-[#2A2A2A] font-semibold  rounded hover:bg-[#0D0D0D] transition">
           Próximo ▶️
           </button>
       </section>
